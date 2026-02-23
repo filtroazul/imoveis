@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AH Imobiliária — Imóveis de Alto Padrão</title>
+  <meta name="description" content="AH Imobiliária — Imóveis residenciais e comerciais de alto padrão. Encontre o seu próximo lar com quem entende de luxo." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- GLOW BORDERS -->
+<div class="page-border-top"></div>
+<div class="page-border-bottom"></div>
+
+<!-- CURSOR -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- PRELOADER -->
+<div class="preloader" id="preloader" aria-hidden="true">
+  <svg class="loader-mark" viewBox="0 0 180 180" role="img" aria-label="AH">
+    <defs>
+      <linearGradient id="mGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#7a5f28" />
+        <stop offset="50%" stop-color="#c9a84c" />
+        <stop offset="100%" stop-color="#8b1a2a" />
+      </linearGradient>
+    </defs>
+    <path d="M26 145 V35 h26 l38 59 38-59 h26 v110 h-26V79l-38 56h-1L52 79v66z"
+      fill="none" stroke="url(#mGradient)"
+      stroke-width="9" stroke-linejoin="round" stroke-linecap="round" pathLength="100" />
+  </svg>
+</div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <a href="#inicio" class="logo">AH <span>Imobiliária</span></a>
+  <nav class="menu" aria-label="Menu principal">
+    <a href="#inicio">Início</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#imoveis">Imóveis</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
+
+<!-- MODAL PROPERTY -->
+<div class="modal-overlay" id="propModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal" id="modalBox">
+    <button class="modal-close" id="modalClose" aria-label="Fechar">✕</button>
+    <div class="modal-grid">
+      <div class="modal-gallery">
+        <img id="modalImg" src="" alt="" />
+        <div class="modal-gallery-overlay"></div>
+      </div>
+      <div class="modal-info">
+        <div class="modal-badge" id="modalBadge">Destaque</div>
+        <h2 class="modal-title" id="modalTitle"></h2>
+        <div class="modal-price" id="modalPrice"></div>
+        <div class="modal-divider"></div>
+        <div class="modal-details" id="modalDetails"></div>
+        <div class="modal-features" id="modalFeatures"></div>
+        <p class="modal-desc" id="modalDesc"></p>
+        <button class="btn-contact" onclick="window.open('https://wa.me/5527999999999','_blank')">
+          Solicitar Visita →
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <!-- HERO -->
+  <section id="inicio" class="hero">
+    <div class="hero-bg hero-bg-1 parallax" data-speed="0.08"></div>
+    <div class="hero-bg hero-bg-2 parallax" data-speed="0.13"></div>
+    <div class="hero-noise"></div>
+
+    <div class="hero-content wrapper reveal">
+      <p class="kicker">ALTO PADRÃO · EXCLUSIVIDADE</p>
+      <h1 class="hero-title split">AH Imobiliária</h1>
+      <p class="typed-line">
+        <span id="typed-text"></span><span class="caret" aria-hidden="true">|</span>
+      </p>
+      <p class="hero-sub">
+        Curadoria exclusiva de imóveis residenciais e comerciais. Onde cada detalhe reflete o que você merece.
+      </p>
+      <a href="#imoveis" class="btn-hero">Explorar Imóveis</a>
+    </div>
+
+    <div class="hero-photo-wrap reveal" aria-hidden="true">
+      <div class="hero-parallax parallax" data-speed="0.05">
+        <img src="hero.jpg" alt="Imóvel de luxo" class="hero-photo" onerror="this.style.display='none'" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="sobre" class="about wrapper section-height">
+    <div class="about-media left reveal" aria-hidden="true">
+      <div class="about-card parallax" data-speed="0.03">
+        <img src="sobre1.jpg" alt="" onerror="this.style.display='none'" />
+      </div>
+    </div>
+
+    <article class="about-copy reveal">
+      <div class="ornament">
+        <div class="ornament-line"></div>
+        <div class="ornament-diamond"></div>
+        <div class="ornament-line right"></div>
+      </div>
+      <h2 class="split">Sobre Nós</h2>
+      <p>
+        A AH Imobiliária nasce da convicção de que um imóvel não é apenas um bem — é o palco da sua vida.
+        Com olhar refinado e profundo conhecimento do mercado, conectamos pessoas a espaços que transcendem o ordinário.
+      </p>
+      <p>
+        Nossa equipe de especialistas combina <strong>décadas de experiência</strong> com uma abordagem personalizada,
+        garantindo que cada transação seja conduzida com transparência, segurança e excelência.
+      </p>
+      <p>
+        Do primeiro contato à entrega das chaves, somos parceiros em cada passo da sua jornada.
+      </p>
+    </article>
+
+    <div class="about-media right reveal" aria-hidden="true">
+      <div class="about-card parallax" data-speed="0.07">
+        <img src="sobre2.jpg" alt="" onerror="this.style.display='none'" />
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <section class="know-me" aria-hidden="true">
+    <div class="marquee">
+      <div class="marquee-track">
+        <span>ENCONTRE O SEU LAR</span>
+        <span aria-hidden="true">✦</span>
+        <span>ENCONTRE O SEU LAR</span>
+        <span aria-hidden="true">✦</span>
+        <span>ENCONTRE O SEU LAR</span>
+        <span aria-hidden="true">✦</span>
+        <span>ENCONTRE O SEU LAR</span>
+        <span aria-hidden="true">✦</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMÓVEIS -->
+  <section id="imoveis" class="portfolio wrapper section-height">
+    <div class="section-head reveal">
+      <p class="kicker">Portfólio Exclusivo</p>
+      <h2 class="split">Imóveis em Destaque</h2>
+    </div>
+
+    <div class="ornament reveal" style="margin-bottom:48px;">
+      <div class="ornament-line"></div>
+      <div class="ornament-diamond"></div>
+      <div class="ornament-line right"></div>
+    </div>
+
+    <div class="carousel reveal" aria-label="Carrossel de imóveis">
+      <button class="nav prev" aria-label="Imóvel anterior">&#10094;</button>
+      <div class="track-window">
+        <ul class="track" id="project-track">
+
+          <!-- CARD 1 -->
+          <li class="project-card" data-prop="0">
+            <div class="card-img-wrap">
+              <img src="imovel1.jpg" alt="Cobertura Duplex Jardins" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\'%3E%3Crect fill=\'%231a1208\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%237a5f28\' font-size=\'24\'%3E🏛%3C/text%3E%3C/svg%3E'" />
+              <span class="card-badge">Destaque</span>
+            </div>
+            <div class="card-body">
+              <h3>Cobertura Duplex Jardins</h3>
+              <div class="card-location">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                Jardins, São Paulo – SP
+              </div>
+              <p class="card-desc">Cobertura duplex com terraço privativo, piscina e vista panorâmica. 4 suítes, acabamento em mármore italiano.</p>
+              <div class="card-footer">
+                <div class="card-price">R$ 4.800.000<span>Venda</span></div>
+                <button class="project-go" onclick="openModal(0)" aria-label="Ver detalhes">
+                  <span class="icon"></span>
+                </button>
+              </div>
+            </div>
+          </li>
+
+          <!-- CARD 2 -->
+          <li class="project-card" data-prop="1">
+            <div class="card-img-wrap">
+              <img src="imovel2.jpg" alt="Mansão Alphaville" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\'%3E%3Crect fill=\'%231a1208\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%237a5f28\' font-size=\'24\'%3E🏡%3C/text%3E%3C/svg%3E'" />
+              <span class="card-badge">Novo</span>
+            </div>
+            <div class="card-body">
+              <h3>Mansão Alphaville</h3>
+              <div class="card-location">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                Alphaville, Barueri – SP
+              </div>
+              <p class="card-desc">Casa de 800m² com 5 suítes, home theater, adega climatizada e jardim projetado por paisagista renomado.</p>
+              <div class="card-footer">
+                <div class="card-price">R$ 9.200.000<span>Venda</span></div>
+                <button class="project-go" onclick="openModal(1)" aria-label="Ver detalhes">
+                  <span class="icon"></span>
+                </button>
+              </div>
+            </div>
+          </li>
+
+          <!-- CARD 3 -->
+          <li class="project-card" data-prop="2">
+            <div class="card-img-wrap">
+              <img src="imovel3.jpg" alt="Penthouse Itaim Bibi" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\'%3E%3Crect fill=\'%231a1208\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%237a5f28\' font-size=\'24\'%3E🌆%3C/text%3E%3C/svg%3E'" />
+              <span class="card-badge">Alto Padrão</span>
+            </div>
+            <div class="card-body">
+              <h3>Penthouse Itaim Bibi</h3>
+              <div class="card-location">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                Itaim Bibi, São Paulo – SP
+              </div>
+              <p class="card-desc">Penthouse com varanda gourmet de 200m², cozinha Bulthaup, automação completa e 4 vagas de garagem.</p>
+              <div class="card-footer">
+                <div class="card-price">R$ 6.500.000<span>Venda</span></div>
+                <button class="project-go" onclick="openModal(2)" aria-label="Ver detalhes">
+                  <span class="icon"></span>
+                </button>
+              </div>
+            </div>
+          </li>
+
+          <!-- CARD 4 -->
+          <li class="project-card" data-prop="3">
+            <div class="card-img-wrap">
+              <img src="imovel4.jpg" alt="Flat Corporativo Faria Lima" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\'%3E%3Crect fill=\'%231a1208\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%237a5f28\' font-size=\'24\'%3E🏢%3C/text%3E%3C/svg%3E'" />
+              <span class="card-badge">Locação</span>
+            </div>
+            <div class="card-body">
+              <h3>Flat Corporativo Faria Lima</h3>
+              <div class="card-location">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                Faria Lima, São Paulo – SP
+              </div>
+              <p class="card-desc">Flat mobiliado de alto padrão com serviços hoteleiros, ideal para executivos. 2 suítes e vista para o parque.</p>
+              <div class="card-footer">
+                <div class="card-price">R$ 18.000<span>Aluguel/mês</span></div>
+                <button class="project-go" onclick="openModal(3)" aria-label="Ver detalhes">
+                  <span class="icon"></span>
+                </button>
+              </div>
+            </div>
+          </li>
+
+          <!-- CARD 5 -->
+          <li class="project-card" data-prop="4">
+            <div class="card-img-wrap">
+              <img src="imovel5.jpg" alt="Villa Beira-Mar" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\'%3E%3Crect fill=\'%231a1208\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%237a5f28\' font-size=\'24\'%3E🌊%3C/text%3E%3C/svg%3E'" />
+              <span class="card-badge">Exclusivo</span>
+            </div>
+            <div class="card-body">
+              <h3>Villa Beira-Mar Guarujá</h3>
+              <div class="card-location">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                Enseada, Guarujá – SP
+              </div>
+              <p class="card-desc">Villa com acesso direto à praia privativa, 6 suítes, spa completo e sistema de energia solar integrado.</p>
+              <div class="card-footer">
+                <div class="card-price">R$ 14.000.000<span>Venda</span></div>
+                <button class="project-go" onclick="openModal(4)" aria-label="Ver detalhes">
+                  <span class="icon"></span>
+                </button>
+              </div>
+            </div>
+          </li>
+
+          <!-- CARD 6 -->
+          <li class="project-card" data-prop="5">
+            <div class="card-img-wrap">
+              <img src="imovel6.jpg" alt="Loft Design Vila Madalena" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\'%3E%3Crect fill=\'%231a1208\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%237a5f28\' font-size=\'24\'%3E🎨%3C/text%3E%3C/svg%3E'" />
+              <span class="card-badge">Moderno</span>
+            </div>
+            <div class="card-body">
+              <h3>Loft Design Vila Madalena</h3>
+              <div class="card-location">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                Vila Madalena, São Paulo – SP
+              </div>
+              <p class="card-desc">Loft de 280m² com pé-direito duplo, mezanino, iluminação projetada e integração total com galeria de arte privativa.</p>
+              <div class="card-footer">
+                <div class="card-price">R$ 3.100.000<span>Venda</span></div>
+                <button class="project-go" onclick="openModal(5)" aria-label="Ver detalhes">
+                  <span class="icon"></span>
+                </button>
+              </div>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+      <button class="nav next" aria-label="Próximo imóvel">&#10095;</button>
+    </div>
+
+    <a class="portfolio-cta" id="contato" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24">
+        <path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 1.9a3.9 3.9 0 0 0-3.9 3.9v8.4a3.9 3.9 0 0 0 3.9 3.9h8.4a3.9 3.9 0 0 0 3.9-3.9V7.8a3.9 3.9 0 0 0-3.9-3.9H7.8Zm8.9 1.5a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.9a3.1 3.1 0 1 0 0 6.2 3.1 3.1 0 0 0 0-6.2Z" />
+      </svg>
+      Siga-nos no Instagram
+    </a>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <a href="#inicio" class="logo">AH <span>Imobiliária</span></a>
+  <p>© 2025 AH Imobiliária · Todos os direitos reservados · CRECI 00000-SP</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+# admin/config.yml  (AJUSTADO)
+# - Travado em uma versão estável do Decap (no admin/index.html troque o script pra 3.6.1)
+# - Inclui local_backend pra você conseguir testar local (opcional, mas ajuda)
+
+local_backend: true
+
+backend:
+  name: git-gateway
+  branch: main
+
+# (Opcional) Se quiser organizar melhor no futuro:
+# media_folder: "content/uploads"
+# public_folder: "/content/uploads"
+
+collections:
+  - name: "catalogo"
+    label: "Catálogo"
+    files:
+      - name: "imoveis"
+        label: "Imóveis"
+        file: "content/imoveis.json"
+        format: "json"
+        fields:
+          - label: "Lista de imóveis"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title}} — {{fields.badge}}"
+            fields:
+              - { label: "Título", name: "title", widget: "string" }
+
+              - label: "Badge"
+                name: "badge"
+                widget: "select"
+                options: ["Destaque", "Novo", "Alto Padrão", "Locação", "Exclusivo", "Moderno"]
+
+              - { label: "Imagem (URL Cloudinary)", name: "img", widget: "string", hint: "Cole aqui a URL do Cloudinary (image/upload/...)" }
+
+              - { label: "Preço", name: "price", widget: "string", hint: "Ex: R$ 4.800.000 ou R$ 18.000/mês" }
+
+              - label: "Tipo"
+                name: "type"
+                widget: "select"
+                options: ["Venda", "Aluguel"]
+
+              - { label: "Localização", name: "location", widget: "string", hint: "Ex: Jardins, São Paulo – SP" }
+
+              - { label: "Área", name: "area", widget: "string", required: false }
+              - { label: "Quartos", name: "rooms", widget: "string", required: false }
+              - { label: "Disponibilidade", name: "date", widget: "string", required: false }
+              - { label: "Condomínio", name: "condo", widget: "string", required: false }
+
+              - label: "Destaques (features)"
+                name: "features"
+                widget: "list"
+                required: false
+                field: { label: "Item", name: "item", widget: "string" }
+
+              - { label: "Descrição", name: "desc", widget: "text", required: false }
+
+              - { label: "Vídeo (URL opcional)", name: "video", widget: "string", required: false, hint: "Pode ser link do YouTube/Instagram ou Cloudinary video/upload/..." }
+
+              - { label: "Publicado?", name: "published", widget: "boolean", default: true }
