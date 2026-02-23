@@ -39,8 +39,8 @@ document.addEventListener('mouseout', (e) => {
 const roles = [
   'Imóveis de Alto Padrão',
   'Residências Exclusivas',
-  'Coberturas & Penthouses',
-  'Villas & Mansões',
+  'Apartamentos',
+  'Galpões Comerciais',
   'Seu Próximo Lar'
 ];
 
