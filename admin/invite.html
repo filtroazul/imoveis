@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Convite - AH Imobiliária</title>
+  </head>
+  <body>
+    <script>
+      // Captura o hash ou querystring do convite e joga para /admin/
+      // Netlify pode mandar invite_token no hash (#) ou no query (?).
+      const hash = window.location.hash || "";
+      const qs = window.location.search || "";
+
+      if (hash.includes("invite_token=") || qs.includes("invite_token=")) {
+        // preserva token pro Decap/Identity entender
+        window.location.replace("/admin/" + (hash || ("#" + qs.replace("?", ""))));
+      } else {
+        window.location.replace("/admin/");
+      }
+    </script>
+  </body>
+</html>
